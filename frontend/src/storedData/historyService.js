@@ -9,7 +9,7 @@ const getHistoryItems = async (token, dispatch) => {
     };
 
     const response = await axios.get(
-      "http://localhost:5000/api/history/getData",
+      "https://mern-spotifyweb.onrender.com/api/history/getData",
       config
     );
     dispatch({
@@ -29,7 +29,11 @@ const historyItem = async (itemData, token) => {
       },
     };
 
-    await axios.post("http://localhost:5000/api/history", itemData, config);
+    await axios.post(
+      "https://mern-spotifyweb.onrender.com/api/history",
+      itemData,
+      config
+    );
   } catch (error) {
     // const errorMessage = error.response?.data?.message || "Error liking item";
     // dispatch(showErrorMessage(errorMessage));
@@ -45,12 +49,12 @@ const deleteItem = async (itemData, token) => {
     };
 
     await axios.post(
-      "http://localhost:5000/api/history/delete",
+      "https://mern-spotifyweb.onrender.com/api/history/delete",
       itemData,
       config
     );
   } catch (error) {
-    const errorMessage = error.response?.data?.message || "Error liking item";
+    // const errorMessage = error.response?.data?.message || "Error liking item";
     // dispatch(showErrorMessage(errorMessage));
   }
 };

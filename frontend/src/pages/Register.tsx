@@ -50,7 +50,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users",
+        "https://mern-spotifyweb.onrender.com/api/users",
         userData,
         {
           headers: {

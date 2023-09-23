@@ -31,7 +31,7 @@ const ProfileDetailsModal = ({
     if (user.user.name !== userNameValue) {
       try {
         const response = await axios.put(
-          "http://localhost:5000/api/users/changeUserData",
+          "https://mern-spotifyweb.onrender.com/api/users/changeUserData",
           { email, name: userNameValue },
           {
             headers: {

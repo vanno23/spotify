@@ -13,7 +13,11 @@ const likeItem = async (itemData, token, dispatch) => {
       },
     };
 
-    await axios.post("http://localhost:5000/api/likedItems", itemData, config);
+    await axios.post(
+      "https://mern-spotifyweb.onrender.com/api/likedItems",
+      itemData,
+      config
+    );
   } catch (error) {
     const errorMessage = error.response?.data?.message || "Error liking item";
     dispatch(showErrorMessage(errorMessage));
@@ -30,7 +34,7 @@ const getLikedItems = async (token, dispatch) => {
     };
 
     const response = await axios.get(
-      "http://localhost:5000/api/likedItems",
+      "https://mern-spotifyweb.onrender.com/api/likedItems",
       config
     );
 
