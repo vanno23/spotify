@@ -1,0 +1,62 @@
+@charset "UTF-8";
+.containerItem {
+  color: white;
+  height: 100%;
+  padding: 14px;
+  background: #181818;
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+.containerItem .containerItemBg {
+  position: relative;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 100%;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  background-color: #e0e0e0;
+}
+.containerItem .containerItemBg::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.containerItem h3 {
+  color: white;
+  font-size: 0.95rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.containerItem .album_type {
+  color: #b3b3b3;
+  text-transform: capitalize;
+  display: flex;
+  margin: 5px 0 15px;
+}
+.containerItem .album_type h5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.containerItem .album_type .artistName {
+  font-size: 0.875rem;
+}
+.containerItem .album_type span {
+  font-size: 0.875rem;
+}
+.containerItem .album_type span::before {
+  content: "•";
+  margin: 0px 4px;
+}/*# sourceMappingURL=ContainerItem.css.map */

@@ -1,0 +1,74 @@
+.LibrarySearchHeader {
+  width: 188px;
+  position: relative;
+  height: 30px;
+  margin: 8px 16px;
+
+  &.LibrarySearchHeaderHide {
+    display: none;
+  }
+  &.activeSearch {
+    input {
+      width: 100%;
+      background-color: hsla(0, 0%, 100%, 0.1);
+    }
+
+    .LibrarySearchButton:hover {
+      background-color: transparent;
+    }
+  }
+  input {
+    transition: 0.2s;
+    background-color: transparent;
+    border: none;
+    width: 0;
+    height: 100%;
+    border-radius: 4px;
+    padding: 8px 32px;
+    color: hsla(0, 0%, 100%, 0.7);
+    font-size: 0.75rem;
+    outline: none;
+
+    &::placeholder {
+      color: hsla(0, 0%, 100%, 0.7);
+    }
+  }
+  .LibrarySearchButton {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    color: hsla(0, 0%, 100%, 0.7);
+    font-size: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 100%;
+    padding-left: 2px;
+
+    &:hover {
+      border-radius: 50%;
+      background-color: hsla(0, 0%, 100%, 0.1);
+    }
+  }
+
+  .deleteSearchValue {
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    display: none;
+    background-color: transparent;
+    color: hsla(0, 0%, 100%, 0.7);
+    font-size: 1.2rem;
+    padding-right: 2px;
+
+    &.activeDeleteSearchValue {
+      display: flex;
+    }
+  }
+}

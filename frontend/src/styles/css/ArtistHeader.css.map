@@ -1,0 +1,1 @@
+{"version":3,"sources":["../scss/_variables.scss","../../components/Artist/ArtistHeader.scss","ArtistHeader.css","../scss/_media.scss"],"names":[],"mappings":"AA+BA,+BAAA;AC5BA;EACE,UAAA;ACDF;ADGE;EACE,0BAAA;EACA,gBAAA;ACDJ;ADIE;EACE,yBAAA;EACA,eAAA;EACA,iBAAA;ACFJ;ACTI;EFQF;IAMI,iBAAA;IACA,mBAAA;ECDJ;AACF;ADIE;EACE,mBAAA;ACFJ","file":"ArtistHeader.css"}

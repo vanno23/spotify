@@ -1,0 +1,15 @@
+@use "../../styles/scss/mixin" as *;
+@use "../../styles/scss/media" as *;
+
+.container {
+  @include containerPadding;
+
+  h2 {
+    margin: 2rem 0 1rem;
+    color: #fff;
+
+    @include mobile {
+      margin: 0.8rem 0 0.5rem;
+    }
+  }
+}

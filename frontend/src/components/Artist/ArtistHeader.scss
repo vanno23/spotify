@@ -1,0 +1,26 @@
+@use "../../styles/scss/media" as *;
+@use "../../styles/scss/mixin" as *;
+
+.aboutAlbum {
+  z-index: 1;
+
+  .albumType {
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+
+  .albumName {
+    margin: 0.08em 0px 0.12em;
+    font-size: 3rem;
+    line-height: 3rem;
+
+    @include mobile {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  .followers {
+    font-size: 0.875rem;
+  }
+}

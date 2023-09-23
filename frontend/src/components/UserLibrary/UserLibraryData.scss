@@ -1,0 +1,170 @@
+@use "../../styles/scss/media" as *;
+.libraryTypes {
+  margin: 8px 16px;
+
+  &.libraryTypesHide {
+    display: none;
+  }
+  .activeButtonHeader {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    .closeActiveHeader {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background-color: #252525;
+      font-size: 1.4rem;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      color: #b3b3b3;
+      transition: 0.2s;
+
+      &:hover {
+        background: #282828;
+      }
+    }
+  }
+  .headerLibrarySlide {
+    width: auto;
+  }
+  .uniqueButton {
+    cursor: pointer;
+    color: white;
+    padding: 8px 13px;
+    border: none;
+    border-radius: 500px;
+    font-size: 14px;
+    background: #252525;
+    transition: 0.2s;
+    text-transform: capitalize;
+    color: white;
+
+    @include tablet {
+      color: white;
+      padding: 4px 10px;
+    }
+
+    &.libraryActiveButton {
+      background-color: white;
+      color: black;
+    }
+    span {
+      font-size: 0.875rem;
+    }
+  }
+}
+.libraryData {
+  margin-inline: 8px;
+  height: 100%;
+  overflow-y: hidden;
+
+  &:hover {
+    overflow-y: scroll; /* Show the scrollbar when hovering */
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &.libraryDataHide {
+    height: 100%;
+  }
+
+  @include tablet {
+    height: calc(100% - 73px);
+  }
+
+  .libraryDataItem {
+    height: 64px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 13px;
+    padding: 8px;
+    border-radius: 6px;
+
+    @include tablet {
+      height: 40px;
+      padding: 5px;
+      column-gap: 8px;
+    }
+
+    &.activeLibraryDataItem {
+      background-color: hsla(0, 0%, 100%, 0.07);
+
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.15);
+      }
+    }
+
+    &:hover {
+      background-color: #1c1c1c;
+    }
+
+    .libraryDataImg {
+      width: 48px;
+      height: 48px;
+      border-radius: 5px;
+
+      @include tablet {
+        width: 30px;
+        height: 30px;
+      }
+
+      img {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 3px;
+        &.libraryArtistImg {
+          border-radius: 50%;
+        }
+
+        @include tablet {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    .libraryDataDetails {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      &.libraryDataDetailsHide {
+        display: none;
+      }
+
+      .libraryDataName {
+        font-size: 0.92rem;
+        font-weight: 700;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        .searchedLetter {
+          background-color: #2e77d0;
+          border-radius: 4px;
+          color: #fff;
+        }
+      }
+
+      .libraryDataType,
+      .libraryDataArtistName {
+        text-transform: capitalize;
+        color: #a7a7a7;
+        font-size: 0.85rem;
+      }
+
+      .libraryDataArtistName {
+        &::before {
+          content: "•";
+          margin: 0px 4px;
+        }
+      }
+    }
+  }
+}

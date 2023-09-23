@@ -1,0 +1,93 @@
+/* -- responsive variables -- */
+.trackItem {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  height: 56px;
+  padding-inline: 16px;
+}
+@media only screen and (max-width: 600px) {
+  .trackItem {
+    height: 50px;
+    padding-inline: 0;
+  }
+}
+.trackItem:hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+.trackItem:hover .trackFavorite button {
+  opacity: 1 !important;
+}
+.trackItem:hover .startTrackBtn .index {
+  display: none;
+}
+.trackItem:hover .startTrackBtn button {
+  display: flex !important;
+}
+.trackItem .aboutTrack {
+  color: white;
+  display: grid;
+  grid-template-columns: 16px minmax(0, 4fr) minmax(120px, 1fr);
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  flex: 1;
+}
+.trackItem .aboutTrack .startTrackBtn {
+  width: 16px;
+}
+.trackItem .aboutTrack .startTrackBtn .index {
+  color: #a7a7a7;
+}
+.trackItem .aboutTrack .startTrackBtn button {
+  border: none;
+  display: none;
+  background-color: transparent;
+  color: white;
+  font-size: 0.8rem;
+  transform: rotate(90deg);
+}
+.trackItem .aboutTrack .trackInfo {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+}
+.trackItem .aboutTrack .trackInfo .trackImage {
+  height: 40px;
+}
+.trackItem .aboutTrack .trackInfo .trackImage img {
+  height: 100%;
+  width: 40px;
+}
+.trackItem .aboutTrack .trackInfo a {
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.trackItem .aboutTrack .trackInfo a:hover {
+  text-decoration: underline;
+}
+.trackItem .aboutTrack .trackDuration {
+  display: flex;
+  align-items: center;
+  justify-self: flex-end;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+.trackItem .aboutTrack .trackDuration .trackFavorite button {
+  border: none;
+  display: flex;
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: hsla(0, 0%, 100%, 0.7);
+  opacity: 0;
+}
+.trackItem .aboutTrack .trackDuration .trackFavorite button:hover {
+  color: #fff;
+}
+.trackItem .aboutTrack .trackDuration p {
+  font-size: 0.875rem;
+  color: #a7a7a7;
+}/*# sourceMappingURL=TrackItem.css.map */

@@ -1,0 +1,61 @@
+@use "../../styles/scss/media" as *;
+@use "../../styles/scss/mixin" as *;
+@use "../../styles/scss//variables" as *;
+.albumTrackSection {
+  margin-top: 110px;
+  @include containerPadding;
+
+  @include mobile {
+    margin-top: 80px;
+  }
+  .trackHeaderTitle {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 16px minmax(0, 4fr) minmax(120px, 1fr);
+    padding-inline: 16px;
+    color: $text-subdued;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $background-tinted-highlight;
+    column-gap: 16px;
+
+    @include mobile {
+      padding-inline: 8px;
+    }
+    &.searchedType {
+      grid-template-columns: 16px minmax(0, 4fr) minmax(0, 2fr) minmax(
+          120px,
+          1fr
+        );
+
+      @include tablet {
+        grid-template-columns: 16px minmax(0, 4fr) minmax(0, 2fr) minmax(
+            45px,
+            1fr
+          );
+      }
+    }
+
+    @include tablet {
+      column-gap: 6px;
+    }
+
+    div {
+      font-size: 0.875rem;
+      font-weight: 700;
+      display: flex;
+      column-gap: 16px;
+    }
+
+    .clock {
+      justify-self: end;
+      button {
+        display: flex;
+        border: none;
+        background-color: transparent;
+        font-size: 1.2rem;
+        color: $text-subdued;
+      }
+    }
+  }
+}

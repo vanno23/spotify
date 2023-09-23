@@ -1,0 +1,22 @@
+/* -- responsive variables -- */
+.aboutAlbum {
+  z-index: 1;
+}
+.aboutAlbum .albumType {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+.aboutAlbum .albumName {
+  margin: 0.08em 0px 0.12em;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+@media only screen and (max-width: 600px) {
+  .aboutAlbum .albumName {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+.aboutAlbum .followers {
+  font-size: 0.875rem;
+}/*# sourceMappingURL=ArtistHeader.css.map */

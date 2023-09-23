@@ -1,0 +1,16 @@
+@mixin createEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin containerPadding {
+  padding-inline: 24px;
+  @media screen and (max-width: 1024px) {
+    padding-inline: 18px;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding-inline: 12px;
+  }
+}

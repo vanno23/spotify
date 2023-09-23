@@ -1,0 +1,45 @@
+@use "../styles/scss/variables" as *;
+@use "../styles/scss/media" as *;
+@use "../styles/scss/mixin" as *;
+
+.profileType,
+.userFollowing {
+  font-size: 0.875rem;
+}
+
+.profileSection {
+  width: 100%;
+
+  div {
+    display: flex;
+  }
+}
+.profileName {
+  cursor: pointer;
+  width: 100%;
+  font-size: 5rem;
+
+  @include mobile {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    margin: 5px 0;
+  }
+}
+
+.profileLikedTracks {
+  margin-top: 110px;
+  @include containerPadding;
+
+  @include mobile {
+    margin-top: 40px;
+  }
+  .profileLikedTracksTitle {
+    color: white;
+  }
+
+  .profileLikedTrackText {
+    color: #a7a7a7;
+    font-size: 0.875rem;
+    margin: 2px 0 15px;
+  }
+}

@@ -1,0 +1,180 @@
+@use "../../styles/scss/media" as *;
+@use "../../styles/scss/mixin" as *;
+
+.trackItem {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  height: 56px;
+  padding-inline: 16px;
+
+  @include mobile {
+    padding-inline: 8px;
+    height: 45px;
+  }
+
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 0.1);
+
+    .trackFavorite button {
+      opacity: 1 !important;
+    }
+
+    .startTrackBtn {
+      .index {
+        display: none;
+      }
+
+      button {
+        display: flex !important;
+      }
+    }
+    .trackImage {
+      img {
+        opacity: 0.4;
+      }
+      button {
+        display: flex !important;
+      }
+    }
+  }
+
+  .aboutTrack {
+    color: white;
+    display: grid;
+    grid-template-columns: 16px minmax(0, 4fr) minmax(120px, 1fr);
+    align-items: center;
+    column-gap: 16px;
+    flex: 1;
+
+    @include mobile {
+      column-gap: 8px;
+      grid-template-columns: 16px minmax(0, 4fr) minmax(45px, 1fr);
+    }
+
+    &.searchTopTracks {
+      grid-template-columns: minmax(0, 4fr) minmax(120px, 1fr);
+    }
+
+    &.searchedType {
+      grid-template-columns: 16px minmax(0, 4fr) minmax(0, 2fr) minmax(
+          120px,
+          1fr
+        );
+
+      @include tablet {
+        grid-template-columns: 16px minmax(0, 4fr) minmax(0, 2fr) minmax(
+            45px,
+            1fr
+          );
+      }
+    }
+
+    .startTrackBtn {
+      width: 16px;
+
+      .index {
+        color: #a7a7a7;
+      }
+
+      button {
+        border: none;
+        display: none;
+        background-color: transparent;
+        color: white;
+        font-size: 0.8rem;
+      }
+    }
+
+    .trackInfo {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+
+      @include mobile {
+        column-gap: 8px;
+      }
+
+      .trackImage {
+        position: relative;
+        width: 40px;
+        height: 40px;
+
+        @include mobile {
+          width: 30px;
+          height: 30px;
+        }
+        img {
+          object-fit: cover;
+          height: 100%;
+        }
+
+        button {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          border: none;
+          display: none;
+          background-color: transparent;
+          color: white;
+          font-size: 0.8rem;
+        }
+      }
+
+      a {
+        color: white;
+        @include createEllipsis;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .artistName {
+        @include createEllipsis;
+        font-size: 0.875rem;
+        color: #a7a7a7;
+      }
+    }
+
+    .trackItemAlbumName {
+      font-size: 0.875rem;
+      color: #a7a7a7;
+
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .trackDuration {
+      display: flex;
+      align-items: center;
+      justify-self: flex-end;
+      column-gap: 25px;
+
+      .trackFavorite button {
+        border: none;
+        display: flex;
+        background-color: transparent;
+        font-size: 1.2rem;
+        color: hsla(0, 0%, 100%, 0.7);
+        opacity: 0;
+
+        &.saved {
+          color: #1ed760 !important;
+        }
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      p {
+        font-size: 0.875rem;
+        color: #a7a7a7;
+      }
+    }
+  }
+}

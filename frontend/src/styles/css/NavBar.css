@@ -1,0 +1,40 @@
+/* -- responsive variables -- */
+.NavBar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.NavBar .navHeader,
+.NavBar .library {
+  background-color: #121212;
+  border-radius: 8px;
+}
+.NavBar .navHeader {
+  padding: 8px 12px;
+}
+.NavBar .library {
+  height: 100%;
+}
+.NavBar ul li {
+  padding: 4px 12px;
+}
+.NavBar ul li a {
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  display: flex;
+  align-items: center;
+}
+.NavBar ul li a,
+.NavBar ul li button {
+  color: #b3b3b3;
+}
+.NavBar ul li.active a,
+.NavBar ul li.active button {
+  color: white;
+}
+.NavBar ul li button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+}/*# sourceMappingURL=NavBar.css.map */

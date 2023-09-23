@@ -1,0 +1,189 @@
+@use "../../styles/scss/media" as *;
+.profile-details-modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background-color: rgba($color: black, $alpha: 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include break(1300px) {
+    justify-content: right;
+    padding-right: 150px;
+  }
+
+  @include tablet {
+    justify-content: center;
+    padding-right: 0px;
+  }
+
+  @include break(400px) {
+    justify-content: right;
+    padding-right: 30px;
+  }
+
+  .profile-details {
+    background-color: rgb(44, 44, 44);
+    max-width: 500px;
+    padding: 25px 20px;
+    border-radius: 10px;
+    @include tablet {
+      max-width: 300px;
+      padding: 20px 15px;
+      border-radius: 8px;
+    }
+
+    @include mobile {
+      max-width: 200px;
+      padding: 10px 8px;
+      border-radius: 8px;
+    }
+
+    .profile-details-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .close-profile-modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: transparent;
+        &:hover {
+          background-color: rgb(63, 63, 63);
+        }
+        i {
+          font-size: 1.3rem;
+          color: rgb(170, 170, 170);
+        }
+      }
+      h2 {
+        color: white;
+      }
+    }
+
+    .profile-modal-form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 25px 0 20px;
+      column-gap: 20px;
+
+      @include tablet {
+        margin: 15px 0 10px;
+        column-gap: 15px;
+      }
+      @include mobile {
+        margin: 10px 0 5px;
+        column-gap: 10px;
+      }
+      .profile-modal-image {
+        min-width: 180px;
+        min-height: 180px;
+        border-radius: 50%;
+        box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+        background-color: #282828;
+        border: none;
+
+        @include tablet {
+          min-width: 100px;
+          min-height: 100px;
+        }
+        @include mobile {
+          min-width: 60px;
+          min-height: 60px;
+        }
+        i {
+          font-size: 4rem;
+          color: rgb(115, 115, 115);
+
+          @include tablet {
+            font-size: 2.5rem;
+          }
+
+          @include mobile {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .profile-modal-input {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        label {
+          width: 100%;
+          font-size: 0.7rem;
+          color: rgb(115, 115, 115);
+          font-weight: 700;
+          padding: 0 0 2px 5px;
+        }
+        input {
+          width: 100%;
+          background-color: rgb(63, 63, 63);
+          border: 1px solid rgb(63, 63, 63);
+          outline: none;
+          padding: 10px;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          color: white;
+          transition: 0.2s;
+
+          @include tablet {
+            padding: 7px;
+            font-size: 0.875rem;
+          }
+          @include mobile {
+            padding: 4px;
+            font-size: 0.675rem;
+          }
+          &:focus {
+            border: 1px solid rgb(96, 96, 96);
+            background-color: rgb(52, 52, 52);
+          }
+        }
+
+        button {
+          cursor: pointer;
+          font-size: 1rem;
+          letter-spacing: 0.5px;
+          font-weight: 700;
+          border-radius: 500px;
+          color: black;
+          background-color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 16px 28px;
+          @include tablet {
+            font-size: 0.875rem;
+            padding: 8px 15px;
+          }
+          @include mobile {
+            font-size: 0.675rem;
+            padding: 5px 10px;
+          }
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+
+    .profile-modal-text {
+      color: white;
+      font-size: 0.675rem;
+      font-weight: 700;
+    }
+  }
+}

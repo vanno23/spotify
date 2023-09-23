@@ -1,0 +1,28 @@
+/* -- responsive variables -- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: black;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  margin: 12px;
+}
+.main .mainContent {
+  height: calc(100vh - 24px);
+  overflow: auto;
+  position: relative;
+  z-index: 0;
+  background-color: #121212;
+  border-radius: 8px;
+}/*# sourceMappingURL=App.css.map */

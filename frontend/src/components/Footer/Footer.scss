@@ -1,0 +1,144 @@
+@use "../../styles/scss/mixin" as *;
+@use "../../styles/scss/media" as *;
+
+.footer {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  @include containerPadding;
+
+  @include mobile {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .footerSocial {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #494949;
+    padding-bottom: 1rem;
+
+    .footerSocialAbout {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-right: 10px;
+
+      @include tablet {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include mobile {
+        column-gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+
+        .footerSocialUsefulLinks {
+          display: none;
+        }
+      }
+
+      .footerSocialAboutTitles {
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+
+        @include break(720px) {
+          font-size: 0.925rem;
+        }
+      }
+
+      ul li {
+        margin: 8px 0px;
+
+        @include break(720px) {
+          margin: 4px 0px;
+        }
+
+        @include mobile {
+          margin: 1px 0;
+        }
+
+        a {
+          color: #a7a7a7;
+
+          @include break(720px) {
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+
+    .footerSocialIcons {
+      display: flex;
+      column-gap: 16px;
+
+      @include mobile {
+        column-gap: 8px;
+      }
+
+      a {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: inline-flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        background-color: rgb(41, 41, 41);
+        font-size: 1rem;
+        @include mobile {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+
+  .footerPrivacy {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    align-items: center;
+
+    @include mobile {
+      margin-top: 1rem;
+    }
+
+    .footerPrivacyLeftSide {
+      display: flex;
+      column-gap: 15px;
+      align-items: center;
+
+      div {
+        display: flex;
+
+        a {
+          color: #a7a7a7;
+          font-size: 0.875rem;
+
+          @include tablet {
+            font-size: 0.675rem;
+          }
+        }
+      }
+
+      @include mobile {
+        column-gap: 5px;
+
+        :nth-child(5),
+        :nth-child(6) {
+          display: none;
+        }
+      }
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: #a7a7a7;
+      @include tablet {
+        font-size: 0.675rem;
+      }
+    }
+  }
+}

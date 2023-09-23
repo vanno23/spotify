@@ -1,0 +1,115 @@
+@use "../../styles/scss/media" as *;
+@use "../../styles/scss/mixin" as *;
+.aboutAlbum {
+  z-index: 1;
+
+  .albumType {
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+
+  .albumName {
+    margin: 0.08em 0px 0.12em;
+    font-size: 3rem;
+    line-height: 3rem;
+
+    @include mobile {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  .headerDetails {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+
+    @include break(450px) {
+      font-size: 0.75rem;
+    }
+    .artistName {
+      color: white;
+      font-weight: 700;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .artistImgSmall {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      margin-right: 8px;
+      object-fit: cover;
+
+      @include break(450px) {
+        margin-right: 2px;
+      }
+    }
+
+    span {
+      &::before {
+        content: "•";
+        margin: 0px 4px;
+      }
+    }
+
+    .duration {
+      color: hsla(0, 0%, 100%, 0.7);
+    }
+  }
+}
+
+.trackArtistContainer {
+  display: flex;
+  justify-content: end;
+
+  @include break(1650px) {
+    justify-content: start;
+  }
+
+  .trackArtist {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    width: 400px;
+    margin-right: 200px;
+    text-transform: capitalize;
+    color: white;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 100px;
+
+    @include break(1650px) {
+      @include containerPadding;
+      margin-top: 100px;
+      margin-bottom: 35px;
+    }
+
+    @include tablet {
+      margin-top: 80px;
+      margin-left: 10px;
+    }
+
+    .trackArtistName {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 0.1);
+    }
+
+    img {
+      box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}

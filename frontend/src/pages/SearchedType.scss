@@ -1,0 +1,27 @@
+@use "../styles/scss/variables" as *;
+@use "../styles/scss/media" as *;
+@use "../styles/scss/mixin" as *;
+
+.searchedTypePage {
+  margin-top: 140px;
+
+  @include mobile {
+    margin-top: 110px;
+  }
+  .searchedTypeGrid {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+    @include containerPadding;
+    @include tablet {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+    }
+  }
+}

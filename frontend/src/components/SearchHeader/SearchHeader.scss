@@ -1,0 +1,37 @@
+@use "../../styles/scss/media" as *;
+.searchHeader {
+  pointer-events: auto;
+  margin-top: 14px;
+
+  @include mobile {
+    margin-top: 8px;
+  }
+  .searchType {
+    display: flex;
+    column-gap: 10px;
+
+    button {
+      cursor: pointer;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 500px;
+      font-size: 14px;
+      background: #212121;
+
+      @include mobile {
+        padding: 5px 8px;
+        font-size: 12px;
+      }
+
+      transition: 0.2s;
+      &:hover {
+        background: #282828;
+      }
+      &.activeSearchType {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.findSongs {
+  width: 290px;
+  overflow: hidden;
+  background-color: #242424;
+  border-radius: 8px;
+  margin: 8px auto;
+  padding: 16px 20px;
+  color: white;
+  margin-top: 50px;
+
+  &.findSongsHide {
+    display: none;
+  }
+  .findSongsHeader {
+    p:nth-child(1) {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    p:nth-child(2) {
+      font-size: 0.875rem;
+    }
+  }
+  .findSongsLink {
+    margin-top: 20px;
+    a {
+      background-color: white;
+      font-size: 0.875rem;
+      color: black;
+      border-radius: 500px;
+      font-weight: 700;
+      padding: 8px 16px;
+      &:hover {
+        padding: 9px 17px;
+      }
+    }
+  }
+}

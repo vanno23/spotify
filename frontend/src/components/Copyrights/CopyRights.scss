@@ -1,0 +1,16 @@
+@use "../../styles/scss/variables" as *;
+.copyRight {
+  margin-top: 32px;
+  padding-inline: $pagePaddingInline;
+  div {
+    color: #b3b3b3;
+
+    .newReleaseDate {
+      font-size: 0.875rem;
+    }
+
+    .copyRightText {
+      font-size: 0.6875rem;
+    }
+  }
+}

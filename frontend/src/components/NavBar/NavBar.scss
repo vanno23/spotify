@@ -1,0 +1,101 @@
+@use "../../styles/scss/variables" as *;
+@use "../../styles/scss/media" as *;
+
+.NavBar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  z-index: 1;
+  transition: 0.3s;
+
+  .show-hide-navbar {
+    display: none;
+    justify-content: end;
+  }
+  @include tablet {
+    width: 60px;
+    background-color: $background-base;
+    overflow: hidden;
+
+    .show-hide-navbar {
+      display: flex;
+    }
+    &.showNav {
+      width: 320px;
+
+      .show-hide-navbar {
+        .icon {
+          color: white;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &.hideNav {
+      a {
+        .navUlTitle {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    width: 60px;
+    &.showNav {
+      width: 230px;
+    }
+  }
+
+  .navHeader,
+  .library {
+    background-color: $background-base;
+    border-radius: $mainPage_BorderRadius;
+  }
+
+  .navHeader {
+    padding: 8px 12px;
+  }
+
+  .library {
+    height: calc(100vh - 120px);
+    overflow: hidden;
+
+    @include tablet {
+      height: calc(100vh - 140px);
+    }
+
+    @include mobile {
+      height: calc(100vh - 128px);
+    }
+  }
+  ul {
+    li {
+      padding: 4px 12px;
+
+      a {
+        font-weight: 700;
+        column-gap: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 1.05rem;
+      }
+
+      a,
+      button {
+        color: #b3b3b3;
+      }
+
+      &.active {
+        a,
+        button {
+          color: white;
+        }
+      }
+      button {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+      }
+    }
+  }
+}
