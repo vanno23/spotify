@@ -12,7 +12,7 @@
     display: grid;
     align-items: center;
     grid-template-columns:
-      minmax(0, 16px) minmax(0, 6fr) minmax(0, 4fr) minmax(0, 3fr)
+      minmax(0, 16px) minmax(0, 8fr) minmax(0, 4fr) minmax(0, 3fr)
       minmax(120px, 1fr);
     padding-inline: 16px;
     color: #a7a7a7;
@@ -22,9 +22,15 @@
     column-gap: 16px;
     @include tablet {
       grid-template-columns:
-        minmax(0, 16px) minmax(0, 6fr) minmax(0, 4fr) minmax(0, 3fr)
+        minmax(0, 16px) minmax(0, 8fr) minmax(0, 4fr) minmax(0, 3fr)
         minmax(45px, 1fr) !important;
       column-gap: 6px !important;
+    }
+
+    @include mobile {
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      padding-inline: 8px;
     }
 
     p {
@@ -32,6 +38,9 @@
       font-weight: 700;
       display: flex;
       column-gap: 16px;
+      @include mobile {
+        font-size: 0.75rem;
+      }
     }
 
     .clock {
@@ -44,15 +53,21 @@
         color: #a7a7a7;
       }
     }
+
+    span {
+      @include mobile {
+        font-size: 0.75rem;
+      }
+    }
   }
 
   .aboutTrack {
     grid-template-columns:
-      minmax(0, 16px) minmax(0, 6fr) minmax(0, 4fr) minmax(0, 3fr)
+      minmax(0, 16px) minmax(0, 8fr) minmax(0, 4fr) minmax(0, 3fr)
       minmax(120px, 1fr) !important;
     @include tablet {
       grid-template-columns:
-        minmax(0, 16px) minmax(0, 6fr) minmax(0, 4fr) minmax(0, 3fr)
+        minmax(0, 16px) minmax(0, 8fr) minmax(0, 4fr) minmax(0, 3fr)
         minmax(45px, 1fr) !important;
       column-gap: 6px !important;
     }

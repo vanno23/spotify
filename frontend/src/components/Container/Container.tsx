@@ -13,6 +13,7 @@ const Container = ({ title, api, page, data }: ContainerProps) => {
   const [loading, setLoading] = useState(true);
   const [slidesPerView, setSlidesPerView] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [spaceBetween, setSpaceBetween] = useState<string>("24px");
 
   const fetchData = useCallback(async () => {
     try {
@@ -72,9 +73,18 @@ const Container = ({ title, api, page, data }: ContainerProps) => {
     };
   }, [handleResize]);
 
+  useEffect(() => {
+    // Update spaceBetween based on window height
+    if (window.innerWidth <= 600) {
+      setSpaceBetween("12px");
+    } else {
+      setSpaceBetween("24px"); // Set it back to the default value
+    }
+  }, []);
+
   const swiperOptions = {
     slidesPerView: slidesPerView,
-    spaceBetween: 24,
+    spaceBetween: spaceBetween,
   };
   return (
     <div className="container">

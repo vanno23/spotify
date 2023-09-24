@@ -1,4 +1,3 @@
-import "./ArtistHeader.scss";
 import GenericHeader from "../GenericHeader";
 import { artistDataProps } from "../../GenericTypeScript/Artist";
 

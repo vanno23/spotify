@@ -143,14 +143,6 @@ const Footer = () => {
             </Link>
           </div>
           <div>
-            <Link
-              target="_blank"
-              to="https://www.spotify.com/ge/legal/privacy-policy/#s3"
-            >
-              About Ads
-            </Link>
-          </div>
-          <div>
             <Link target="_blank" to="https://www.spotify.com/ge/accessibility">
               Accessibility
             </Link>

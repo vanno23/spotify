@@ -7,13 +7,17 @@
   border-radius: 500px;
   background-color: #242424;
   text-overflow: ellipsis;
-  font-size: 0.875rem;
+
   pointer-events: visible;
-  @include mobile {
-    width: 220px;
+  @include tablet {
+    width: 280px;
     height: 40px;
+  }
+  @include mobile {
+    width: 120px;
+    height: 30px;
     input::placeholder {
-      font-size: 1.1rem;
+      font-size: 0.9rem;
     }
   }
   &:hover {
@@ -31,6 +35,11 @@
     transform: translateY(-50%);
     color: rgba(255, 255, 255, 0.698);
     font-size: 15px;
+
+    @include mobile {
+      font-size: 8px;
+      left: 8px;
+    }
   }
 
   .closeIcon {
@@ -40,6 +49,11 @@
     transform: translateY(-50%);
     font-size: 20px;
     color: white;
+
+    @include mobile {
+      font-size: 12px;
+      right: 8px;
+    }
   }
   input {
     width: 100%;
@@ -50,6 +64,11 @@
     outline: none;
     border-radius: 500px;
     color: white;
+
+    @include mobile {
+      font-size: 0.875rem;
+      padding-inline: 23px;
+    }
 
     &:focus {
       border: 3px solid white;
