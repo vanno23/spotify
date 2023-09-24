@@ -1,8 +1,9 @@
 @use "../../styles/scss/mixin" as *;
 @use "../../styles/scss/variables" as *;
+@use "../../styles/scss/media" as *;
 
 .browseAll {
-  padding-inline: $pagePaddingInline;
+  @include containerPadding;
   .browseAllTitle {
     color: white;
     margin-bottom: 1rem;
@@ -11,6 +12,10 @@
   .browseAllContainer {
     display: grid;
     gap: 24px;
+
+    @include mobile {
+      gap: 12px;
+    }
 
     .item {
       position: relative;

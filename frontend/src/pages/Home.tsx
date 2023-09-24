@@ -22,6 +22,11 @@ const Home = () => {
           api="search?q=genre:rock&type=artist&limit=10"
           page="homePageArtist"
         />
+        <Container
+          title="Popular New Releases"
+          api="browse/new-releases?limit=10"
+          page="homePageArtist"
+        />
       </div>
     </>
   );

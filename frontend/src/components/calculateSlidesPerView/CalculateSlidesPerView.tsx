@@ -5,9 +5,9 @@ export const calculateSlidesPerView = (containerWidth: number) => {
     return 6;
   } else if (containerWidth < 1200 && containerWidth >= 800) {
     return 5;
-  } else if (containerWidth < 800 && containerWidth >= 500) {
+  } else if (containerWidth < 800 && containerWidth >= 400) {
     return 4;
-  } else if (containerWidth < 500 && containerWidth >= 300) {
+  } else if (containerWidth < 400 && containerWidth >= 300) {
     return 3;
   } else if (containerWidth < 300) {
     return 2;

@@ -23,7 +23,11 @@ const Container = ({ title, api, page, data }: ContainerProps) => {
         let data = [];
 
         if (page === "homePageArtist") {
-          data = response.artists.items || [];
+          if (api === "browse/new-releases?limit=10") {
+            data = response.albums.items;
+          } else {
+            data = response.artists.items || [];
+          }
         } else if (page === "artist") {
           data = response.artists || [];
         } else if (page === "playlist") {
@@ -62,6 +66,12 @@ const Container = ({ title, api, page, data }: ContainerProps) => {
         containerRef.current?.clientWidth;
       setSlidesPerView(calculateSlidesPerView(containerWidth));
     }
+
+    if (window.innerWidth <= 600) {
+      setSpaceBetween("12px");
+    } else {
+      setSpaceBetween("24px"); // Set it back to the default value
+    }
   }, []);
 
   useEffect(() => {
@@ -72,15 +82,6 @@ const Container = ({ title, api, page, data }: ContainerProps) => {
       window.removeEventListener("resize", handleResize);
     };
   }, [handleResize]);
-
-  useEffect(() => {
-    // Update spaceBetween based on window height
-    if (window.innerWidth <= 600) {
-      setSpaceBetween("12px");
-    } else {
-      setSpaceBetween("24px"); // Set it back to the default value
-    }
-  }, []);
 
   const swiperOptions = {
     slidesPerView: slidesPerView,
@@ -96,7 +97,7 @@ const Container = ({ title, api, page, data }: ContainerProps) => {
             {renderData.length > 0 && <h2>{title}</h2>}
             <Swiper {...swiperOptions}>
               {renderData?.map((item: any) => (
-                <SwiperSlide key={item.id} className="swiperContainer">
+                <SwiperSlide key={item.id}>
                   <ContainerItem item={item} page={page} />
                 </SwiperSlide>
               ))}

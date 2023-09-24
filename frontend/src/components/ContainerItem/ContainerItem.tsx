@@ -15,7 +15,7 @@ const ContainerItem: React.FC<ContainerItemProps> = ({ item, page }) => {
   const getImageUrl = () => {
     let imageUrl;
     if ((page === "search" || page === "searchedType") && item?.album) {
-      imageUrl = item.album.images?.[2]?.url || item.album.images?.[0]?.url;
+      imageUrl = item.album.images?.[1]?.url || item.album.images?.[0]?.url;
     } else {
       imageUrl = item.images?.[1]?.url || item.images?.[0]?.url;
     }
@@ -83,6 +83,11 @@ const ContainerItem: React.FC<ContainerItemProps> = ({ item, page }) => {
 
   return (
     <div className="containerItemLink">
+      <div className="containerStartIcon">
+        <button aria-label="Start track">
+          <i className="fa-solid fa-play"></i>
+        </button>
+      </div>
       {page === "search" && (
         <button
           aria-label="deleteIcon"
