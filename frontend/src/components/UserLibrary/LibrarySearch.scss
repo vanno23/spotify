@@ -1,13 +1,8 @@
-@use "../../styles/scss/media" as *;
 .LibrarySearchHeader {
   width: 188px;
   position: relative;
   height: 30px;
   margin: 8px 16px;
-
-  @include tablet {
-    margin: 8px 13px;
-  }
 
   &.LibrarySearchHeaderHide {
     display: none;

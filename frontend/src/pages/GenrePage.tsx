@@ -9,21 +9,21 @@ import { Helmet } from "react-helmet-async";
 const Genre = () => {
   const { genre_id } = useParams();
   const [genreData, setGenreData] = useState<ContainerData[]>([]);
+
   useEffect(() => {
     const fetchHomeItems = async () => {
       try {
-        if (genre_id) {
-          const response = await spotifyApi.getBrowse(
-            `browse/categories/${genre_id}/playlists`
-          );
-          setGenreData(response.playlists.items);
-        }
+        const response = await spotifyApi.getBrowse(
+          `browse/categories/${genre_id}/playlists`
+        );
+        console.log(response); // ნახე, რა პასუხი გიბრუნდება
+        setGenreData(response); // აქ response უნდა იყოს ისეთი, რომელიც გჭირდება
       } catch (error) {
         console.error("Error fetching genre data: ", error);
       }
     };
     fetchHomeItems();
-  }, [genre_id]);
+  }, []);
 
   if (!genreData) {
     // Handle the case when artistData is undefined
@@ -35,9 +35,9 @@ const Genre = () => {
       <Helmet>
         <title>Spotify - Genre</title>
       </Helmet>
-      {genreData?.map((item, index) => {
-        return <ContainerItem item={item} page={"genre"} key={index} />;
-      })}
+      {genreData?.map((item, index) => (
+        <ContainerItem item={item} page={"genre"} key={index} />
+      ))}
     </div>
   );
 };

@@ -7,13 +7,15 @@ import "./Container.scss";
 import { ContainerProps } from "./ContainerType";
 import { ContainerData } from "./ContainerType";
 import { calculateSlidesPerView } from "../calculateSlidesPerView/CalculateSlidesPerView";
+import "swiper/css";
+import "swiper/css/navigation"; // თუ იყენებ ნავიგაციას
+import "swiper/css/pagination"; // თუ იყენებ pagination-ს
 
 const Container = ({ title, api, page, data }: ContainerProps) => {
   const [fetchedData, setFetchedData] = useState<ContainerData[]>([]);
   const [loading, setLoading] = useState(true);
   const [slidesPerView, setSlidesPerView] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [spaceBetween, setSpaceBetween] = useState<string>("24px");
 
   const fetchData = useCallback(async () => {
     try {
@@ -23,11 +25,7 @@ const Container = ({ title, api, page, data }: ContainerProps) => {
         let data = [];
 
         if (page === "homePageArtist") {
-          if (api === "browse/new-releases?limit=10") {
-            data = response.albums.items;
-          } else {
-            data = response.artists.items || [];
-          }
+          data = response.artists.items || [];
         } else if (page === "artist") {
           data = response.artists || [];
         } else if (page === "playlist") {
@@ -66,12 +64,6 @@ const Container = ({ title, api, page, data }: ContainerProps) => {
         containerRef.current?.clientWidth;
       setSlidesPerView(calculateSlidesPerView(containerWidth));
     }
-
-    if (window.innerWidth <= 600) {
-      setSpaceBetween("12px");
-    } else {
-      setSpaceBetween("24px"); // Set it back to the default value
-    }
   }, []);
 
   useEffect(() => {
@@ -85,8 +77,10 @@ const Container = ({ title, api, page, data }: ContainerProps) => {
 
   const swiperOptions = {
     slidesPerView: slidesPerView,
-    spaceBetween: spaceBetween,
+    spaceBetween: 24,
   };
+
+  console.log(renderData);
   return (
     <div className="container">
       <div ref={containerRef}>
@@ -94,10 +88,10 @@ const Container = ({ title, api, page, data }: ContainerProps) => {
           <p>Loading...</p>
         ) : (
           <>
-            {renderData.length > 0 && <h2>{title}</h2>}
+            {renderData?.length > 0 && <h2>{title}</h2>}
             <Swiper {...swiperOptions}>
-              {renderData?.map((item: any) => (
-                <SwiperSlide key={item.id}>
+              {renderData?.filter(Boolean).map((item: any) => (
+                <SwiperSlide key={item.id} className="swiperContainer">
                   <ContainerItem item={item} page={page} />
                 </SwiperSlide>
               ))}

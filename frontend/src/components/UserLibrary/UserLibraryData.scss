@@ -2,9 +2,6 @@
 .libraryTypes {
   margin: 8px 16px;
 
-  @include tablet {
-    margin: 8px 13px;
-  }
   &.libraryTypesHide {
     display: none;
   }
@@ -35,7 +32,6 @@
     width: auto;
   }
   .uniqueButton {
-    display: flex;
     cursor: pointer;
     color: white;
     padding: 8px 13px;
@@ -46,6 +42,11 @@
     transition: 0.2s;
     text-transform: capitalize;
     color: white;
+
+    @include tablet {
+      color: white;
+      padding: 4px 10px;
+    }
 
     &.libraryActiveButton {
       background-color: white;
@@ -70,11 +71,6 @@
   }
   &.libraryDataHide {
     height: 100%;
-
-    .libraryDataItem {
-      width: 38px;
-      justify-content: center;
-    }
   }
 
   @include tablet {
@@ -92,7 +88,7 @@
     border-radius: 6px;
 
     @include tablet {
-      height: 38px;
+      height: 40px;
       padding: 5px;
       column-gap: 8px;
     }

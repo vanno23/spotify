@@ -28,7 +28,7 @@
     height: 114px;
 
     @include mobile {
-      height: 85px;
+      height: 93px;
     }
   }
   .logginHeader {
@@ -39,18 +39,16 @@
     width: 100%;
 
     @include mobile {
-      column-gap: 0px;
+      padding-top: 0;
+      column-gap: 15px;
     }
 
     .logginLinks {
       display: flex;
       height: 48px;
       align-items: center;
-      @include tablet {
-        height: 40px;
-      }
       @include mobile {
-        height: 25px;
+        height: 30px;
       }
 
       button {
@@ -59,25 +57,13 @@
       a {
         display: flex;
         align-items: center;
-        text-align: center;
         font-size: 1rem;
         font-weight: 700;
         color: #b3b3b3;
         pointer-events: auto;
-        @include mobile {
-          font-size: 0.8rem;
-        }
 
         &.signUpLink {
           padding: 8px 32px 8px 8px;
-
-          @include tablet {
-            padding: 8px 24px 8px 8px;
-          }
-
-          @include mobile {
-            padding: 8px 10px 8px 8px;
-          }
           &:hover {
             color: white;
             font-size: 1.05rem;
@@ -85,6 +71,7 @@
         }
 
         &.logInLink {
+          display: flex;
           border-radius: 500px;
           background-color: white;
           color: black;
@@ -96,14 +83,6 @@
 
           span {
             padding-inline: 32px;
-
-            @include tablet {
-              padding-inline: 24px;
-            }
-
-            @include mobile {
-              padding-inline: 10px;
-            }
           }
         }
       }

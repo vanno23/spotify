@@ -53,15 +53,15 @@ const BrowseAll = () => {
         {browseAllData?.map((item) => {
           const { id, name, icons } = item;
           return (
-            <Link to={`/genre/${id}`} key={id}>
-              <div className="item">
-                <div
-                  style={{ backgroundImage: `url(${icons[0].url})` }}
-                  className="backgroundCategory"
-                ></div>
-                <p className="itemTitle">{name}</p>
-              </div>
-            </Link>
+            // <Link to={`/genre/${id}`} key={id}>
+            <div className="item">
+              <div
+                style={{ backgroundImage: `url(${icons[0].url})` }}
+                className="backgroundCategory"
+              ></div>
+              <p className="itemTitle">{name}</p>
+            </div>
+            /* </Link> */
           );
         })}
       </div>

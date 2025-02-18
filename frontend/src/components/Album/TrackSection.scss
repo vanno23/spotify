@@ -1,6 +1,6 @@
 @use "../../styles/scss/media" as *;
 @use "../../styles/scss/mixin" as *;
-@use "../../styles/scss//variables" as *;
+@use "../../styles/scss/variables" as *;
 .albumTrackSection {
   margin-top: 110px;
   @include containerPadding;

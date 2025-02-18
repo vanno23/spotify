@@ -2,7 +2,7 @@
 @use "../../styles/scss/mixin" as *;
 .aboutAlbum {
   z-index: 1;
-  overflow: hidden;
+
   .albumType {
     text-transform: capitalize;
     font-weight: 700;
@@ -16,9 +16,6 @@
     @include mobile {
       font-size: 2.5rem;
       line-height: 2.5rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
     }
   }
 
@@ -77,6 +74,7 @@
     align-items: center;
     column-gap: 16px;
     width: 400px;
+    margin-right: 200px;
     text-transform: capitalize;
     color: white;
     font-weight: 700;
@@ -95,10 +93,6 @@
       margin-top: 80px;
       margin-left: 10px;
     }
-    @include mobile {
-      margin-top: 60px;
-      margin-left: 0px;
-    }
 
     .trackArtistName {
       &:hover {
@@ -116,11 +110,6 @@
       height: 80px;
       border-radius: 50%;
       object-fit: cover;
-
-      @include mobile {
-        width: 50px;
-        height: 50px;
-      }
     }
   }
 }

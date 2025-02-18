@@ -1,6 +1,5 @@
-@use "../../styles/scss/media" as *;
 .findSongs {
-  max-width: 290px;
+  width: 290px;
   overflow: hidden;
   background-color: #242424;
   border-radius: 8px;
@@ -8,10 +7,6 @@
   padding: 16px 20px;
   color: white;
   margin-top: 50px;
-
-  @include mobile {
-    margin-inline: 15px;
-  }
 
   &.findSongsHide {
     display: none;

@@ -120,7 +120,6 @@
   @include mobile {
     padding-top: 12px;
     padding-bottom: 12px;
-    column-gap: 10px;
   }
 
   .startAlbum {
@@ -167,8 +166,8 @@
       padding: 7px 15px;
 
       @include mobile {
-        padding: 5px 10px;
-        font-size: 8px;
+        padding: 5px 12px;
+        font-size: 10px;
       }
     }
 

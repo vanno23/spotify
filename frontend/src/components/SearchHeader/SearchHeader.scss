@@ -1,11 +1,10 @@
 @use "../../styles/scss/media" as *;
 .searchHeader {
-  width: 100%;
   pointer-events: auto;
   margin-top: 14px;
 
   @include mobile {
-    margin-top: 12px;
+    margin-top: 8px;
   }
   .searchType {
     display: flex;

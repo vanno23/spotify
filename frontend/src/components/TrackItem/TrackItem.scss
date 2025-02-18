@@ -10,7 +10,7 @@
 
   @include mobile {
     padding-inline: 8px;
-    height: 35px;
+    height: 45px;
   }
 
   &:hover {
@@ -54,13 +54,6 @@
 
     &.searchTopTracks {
       grid-template-columns: minmax(0, 4fr) minmax(120px, 1fr);
-
-      @include tablet {
-        grid-template-columns: minmax(0, 4fr) minmax(65px, 1fr);
-      }
-      @include mobile {
-        grid-template-columns: minmax(0, 4fr) minmax(45px, 1fr);
-      }
     }
 
     &.searchedType {
@@ -99,7 +92,7 @@
       column-gap: 16px;
 
       @include mobile {
-        column-gap: 6px;
+        column-gap: 8px;
       }
 
       .trackImage {
@@ -108,8 +101,8 @@
         height: 40px;
 
         @include mobile {
-          width: 23px;
-          height: 23px;
+          width: 30px;
+          height: 30px;
         }
         img {
           object-fit: cover;
@@ -161,13 +154,6 @@
       justify-self: flex-end;
       column-gap: 25px;
 
-      @include tablet {
-        column-gap: 15px;
-      }
-      @include mobile {
-        column-gap: 10px;
-      }
-
       .trackFavorite button {
         border: none;
         display: flex;
@@ -175,10 +161,6 @@
         font-size: 1.2rem;
         color: hsla(0, 0%, 100%, 0.7);
         opacity: 0;
-
-        @include mobile {
-          font-size: 1rem;
-        }
 
         &.saved {
           color: #1ed760 !important;
